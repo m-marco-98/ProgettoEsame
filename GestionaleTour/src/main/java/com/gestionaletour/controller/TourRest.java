@@ -15,7 +15,7 @@ import com.gestionaletour.entity.Tour;
 import com.gestionaletour.service.TourService;
 
 @RestController
-@RequestMapping(path = "/tour")
+@RequestMapping(path = "tour")
 @CrossOrigin
 public class TourRest {
 	

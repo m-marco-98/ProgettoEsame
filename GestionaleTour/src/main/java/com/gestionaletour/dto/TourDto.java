@@ -1,42 +1,35 @@
-package com.gestionaletour.entity;
+package com.gestionaletour.dto;
 
 import java.util.List;
 
+import com.gestionaletour.entity.Prenotazione;
+
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 
-@Entity
-@Table(name = "tours")
-public class Tour {
+public class TourDto {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer tourId; 
-	@Column(name = "nome")
+	private int id; 
+
 	private String nome; 
-	@Column(name = "tipo")
+
 	private String tipo; 
-	@Column(name = "posti_max")
+
 	private int postiMax; 
-	@Column(name = "disponibilita")
+
 	private boolean disponibilita;
-	@OneToOne(mappedBy = "tour")
-	@JoinColumn(name = "prenotazione_id")
-	private Prenotazione prenotazione;
+	@Nullable
+	private PrenotazioneDto prenotazione;
 	
-	
-	public int getTourId() {
-		return tourId;
+	public int getId() {
+		return id;
 	}
-	public void setTourId(Integer tourId) {
-		this.tourId = tourId;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -62,12 +55,12 @@ public class Tour {
 	public void setDisponibilita(boolean disponibilita) {
 		this.disponibilita = disponibilita;
 	}
-//	public Prenotazione getPrenotazione() {
-//		return prenotazione;
-//	}
-//	public void setPrenotazione(Prenotazione prenotazione) {
-//		this.prenotazione = prenotazione;
-//	}
+	public PrenotazioneDto getPrenotazione() {
+		return prenotazione;
+	}
+	public void setPrenotazione(PrenotazioneDto prenotazione) {
+		this.prenotazione = prenotazione;
+	}
 	
-			
+	
 }

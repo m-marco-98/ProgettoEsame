@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.gestionaletour.dataacces.PrenotazioneDao;
 import com.gestionaletour.entity.Prenotazione;
+import com.gestionaletour.entity.Utente;
 import com.gestionaletour.repository.PrenotazioneRepository;
 
 @Component
@@ -28,7 +29,8 @@ public class PrenotazioneDaoImpl implements PrenotazioneDao{
 		return prenotazioneRepository.findAll();
 	}
 
-//	public List<Prenotazione> getPrenotazioniByUserId(Integer userId) {
-//		return prenotazioneRepository.findPrenotazioneBy(userId);
-//	}
+	public List<Prenotazione> getPrenotazioneByUtente(Utente utente) {
+		return prenotazioneRepository.findByUtente(utente);
+	}
+
 }

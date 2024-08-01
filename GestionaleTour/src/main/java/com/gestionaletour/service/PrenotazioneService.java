@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.gestionaletour.dataacces.impl.PrenotazioneDaoImpl;
 import com.gestionaletour.entity.Prenotazione;
 import com.gestionaletour.entity.Tour;
+import com.gestionaletour.entity.Utente;
 
 @Service
 public class PrenotazioneService {
@@ -19,9 +20,9 @@ public class PrenotazioneService {
 		return prenotazioneDao.getAllPrenotazioni();
 	}
 	
-//	public List<Prenotazione> getPrenotazioniByUserId(Integer userId) {
-//		return prenotazioneDao.getPrenotazioniByUserId(userId);		
-//	}
+	public List<Prenotazione> getPrenotazioniByUtente(Utente utente) {
+		return prenotazioneDao.getPrenotazioneByUtente(utente);		
+	}
 
 	public void aggiungiPrenotazione(Prenotazione prenotazione) {
 		prenotazioneDao.aggiungiPrenotazione(prenotazione);
